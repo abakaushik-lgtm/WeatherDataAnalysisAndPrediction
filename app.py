@@ -780,7 +780,7 @@ elif page == "🔮 Predict Temperature":
 elif page == "ℹ️ Project Info":
     st.header("ℹ️ Weather Analytics Project Information")
     
-    st.markdown("""
+    st.markdown(r"""
     ### 🌦️ Project Overview
     This Weather Data Analysis and Prediction application provides interactive dashboards and machine learning models for analyzing and forecasting climate conditions.
     It demonstrates a complete end-to-end data science workflow:
