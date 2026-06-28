@@ -275,3 +275,19 @@ def calculate_confidence_score(user_inputs, x_train_vals, r2_score):
     confidence = np.clip(confidence, 10.0, 98.5)
     
     return round(float(confidence), 1)
+
+def determine_weather_condition(temp, humidity, rainfall):
+    """
+    Categorizes the weather condition based on temperature, humidity, and rainfall.
+    Returns: string description of the weather (e.g. Sunny, Humid, Rainy, etc.)
+    """
+    if rainfall > 2.0:
+        return "Rainy 🌧"
+    elif humidity > 85.0:
+        return "Humid / Overcast ☁"
+    elif temp > 25.0:
+        return "Sunny ☀️"
+    elif temp < 10.0:
+        return "Chilly / Cold ❄️"
+    else:
+        return "Pleasant / Clear 🌤"

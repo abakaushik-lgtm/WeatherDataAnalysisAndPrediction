@@ -26,28 +26,28 @@ st.markdown("""
         font-family: 'Outfit', sans-serif;
     }
     
-    /* Center title styling */
+    /* Center title styling - Compact Hero Banner */
     .app-header {
         background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
-        padding: 35px 25px;
-        border-radius: 20px;
+        padding: 18px 20px;
+        border-radius: 16px;
         color: white;
         text-align: center;
-        margin-bottom: 30px;
-        box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+        margin-bottom: 20px;
+        box-shadow: 0 8px 24px rgba(59, 130, 246, 0.15);
     }
     
     .app-header h1 {
-        font-size: 2.8rem;
+        font-size: 2.2rem;
         font-weight: 700;
         margin: 0;
         color: white !important;
     }
     
     .app-header p {
-        font-size: 1.1rem;
+        font-size: 0.95rem;
         font-weight: 300;
-        margin: 10px 0 0 0;
+        margin: 5px 0 0 0;
         opacity: 0.9;
     }
     
@@ -55,106 +55,152 @@ st.markdown("""
     .kpi-container {
         display: flex;
         flex-wrap: wrap;
-        gap: 20px;
+        gap: 15px;
         justify-content: space-between;
-        margin-bottom: 25px;
+        margin-bottom: 20px;
     }
     
     /* Individual KPI Card */
     .kpi-card {
         flex: 1;
-        min-width: 200px;
+        min-width: 150px;
         background: var(--secondary-background-color, rgba(128, 128, 128, 0.05));
         border: 1px solid rgba(128, 128, 128, 0.2);
-        border-radius: 16px;
-        padding: 20px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        border-radius: 12px;
+        padding: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
         transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
         text-align: center;
     }
     
     .kpi-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        transform: translateY(-3px);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
         border-color: #3b82f6;
     }
     
     .kpi-icon {
-        font-size: 2rem;
-        margin-bottom: 8px;
+        font-size: 1.6rem;
+        margin-bottom: 5px;
+        display: flex;
+        justify-content: center;
     }
     
     .kpi-title {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--text-color);
+        opacity: 0.7;
+        margin-bottom: 3px;
+        text-align: center;
+    }
+    
+    .kpi-value {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--text-color);
+        text-align: center;
+        display: block;
+        margin: 0 auto;
+    }
+    
+    /* Prediction output card */
+    .prediction-container {
+        background: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(96, 165, 250, 0.02) 100%);
+        border: 1px solid rgba(59, 130, 246, 0.25);
+        border-radius: 20px;
+        padding: 25px;
+        margin-top: 15px;
+        box-shadow: 0 8px 30px rgba(59, 130, 246, 0.08);
+        text-align: center;
+    }
+    
+    .prediction-label {
         font-size: 0.85rem;
         text-transform: uppercase;
-        letter-spacing: 0.8px;
+        letter-spacing: 1px;
         color: var(--text-color);
         opacity: 0.7;
         margin-bottom: 5px;
     }
     
-    .kpi-value {
-        font-size: 1.8rem;
-        font-weight: 700;
-        color: var(--text-color);
-    }
-    
-    /* Prediction output card */
-    .prediction-container {
-        background: linear-gradient(135deg, rgba(59, 130, 246, 0.12) 0%, rgba(96, 165, 250, 0.03) 100%);
-        border: 2px solid rgba(59, 130, 246, 0.3);
-        border-radius: 24px;
-        padding: 35px;
-        margin-top: 20px;
-        box-shadow: 0 12px 40px rgba(59, 130, 246, 0.1);
-        text-align: center;
-    }
-    
-    .prediction-label {
-        font-size: 1.1rem;
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
-        color: var(--text-color);
-        opacity: 0.8;
-        margin-bottom: 10px;
-    }
-    
     .prediction-val {
-        font-size: 4rem;
+        font-size: 3.2rem;
         font-weight: 800;
         background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        margin-bottom: 15px;
-        line-height: 1;
+        margin-bottom: 10px;
+        line-height: 1.1;
     }
     
     .confidence-badge {
         display: inline-block;
-        padding: 8px 18px;
+        padding: 6px 14px;
         background-color: #10b981;
         color: white;
-        border-radius: 20px;
+        border-radius: 16px;
         font-weight: 600;
-        font-size: 0.95rem;
-        box-shadow: 0 4px 10px rgba(16, 185, 129, 0.2);
+        font-size: 0.85rem;
+        box-shadow: 0 3px 8px rgba(16, 185, 129, 0.15);
     }
     
     .confidence-low {
         background-color: #ef4444;
-        box-shadow: 0 4px 10px rgba(239, 68, 68, 0.2);
+        box-shadow: 0 3px 8px rgba(239, 68, 68, 0.15);
     }
     
     .confidence-medium {
         background-color: #f59e0b;
-        box-shadow: 0 4px 10px rgba(245, 158, 11, 0.2);
+        box-shadow: 0 3px 8px rgba(245, 158, 11, 0.15);
     }
     
     /* Subtext under prediction */
     .prediction-sub {
-        font-size: 0.9rem;
-        opacity: 0.7;
+        font-size: 0.8rem;
+        opacity: 0.6;
+        margin-top: 12px;
+    }
+
+    /* Details alignment inside prediction container */
+    .pred-detail-box {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
         margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid rgba(128, 128, 128, 0.15);
+    }
+    
+    .pred-detail-item {
+        text-align: center;
+    }
+    
+    .pred-detail-label {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        opacity: 0.6;
+        margin-bottom: 2px;
+    }
+    
+    .pred-detail-value {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--text-color);
+    }
+    
+    /* Footer */
+    .footer {
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 40px;
+        border-top: 1px solid rgba(128, 128, 128, 0.2);
+        font-size: 0.85rem;
+        color: var(--text-color);
+        opacity: 0.7;
+        line-height: 1.5;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -184,6 +230,12 @@ if "cleaned_df" not in st.session_state:
 
 if "is_cleaned" not in st.session_state:
     st.session_state.is_cleaned = False
+
+if "prediction_history" not in st.session_state:
+    st.session_state.prediction_history = []
+
+if "last_prediction" not in st.session_state:
+    st.session_state.last_prediction = "N/A"
 
 if "model_trained" not in st.session_state:
     # Check if models already exist in filesystem
@@ -287,41 +339,52 @@ if page == "🏠 Dashboard Overview":
     st.markdown("---")
     
     if df_to_use is not None:
-        # Calculate summary statistics for KPI Cards
-        avg_temp = df_to_use["Temperature"].mean()
-        avg_hum = df_to_use["Humidity"].mean()
-        avg_wind = df_to_use["Wind Speed"].mean()
-        avg_press = df_to_use["Pressure"].mean()
-        tot_rain = df_to_use["Rainfall"].sum()
+        # Calculate Project Metrics for top KPI Cards
+        dataset_rows = df_to_use.shape[0]
+        dataset_cols = df_to_use.shape[1]
+        current_nulls = df_to_use.isnull().sum().sum()
+        current_dups = df_to_use.duplicated().sum()
+        
+        best_r2_text = "N/A"
+        if st.session_state.model_trained:
+            _, _, metadata, _ = utils.load_best_model()
+            if metadata is not None:
+                best_r2_text = f"{metadata['r2_score'] * 100:.1f}%"
+                
+        last_pred_text = st.session_state.last_prediction
         
         # Display KPI Cards
-        # Since standard streamlit columns work fine, we inject custom classes for cards
         st.markdown(f"""
         <div class="kpi-container">
             <div class="kpi-card">
-                <div class="kpi-icon">🌡️</div>
-                <div class="kpi-title">Average Temperature</div>
-                <div class="kpi-value">{avg_temp:.1f}°C</div>
-            </div>
-            <div class="kpi-card">
-                <div class="kpi-icon">💧</div>
-                <div class="kpi-title">Average Humidity</div>
-                <div class="kpi-value">{avg_hum:.1f}%</div>
-            </div>
-            <div class="kpi-card">
-                <div class="kpi-icon">💨</div>
-                <div class="kpi-title">Average Wind Speed</div>
-                <div class="kpi-value">{avg_wind:.1f} km/h</div>
-            </div>
-            <div class="kpi-card">
                 <div class="kpi-icon">📊</div>
-                <div class="kpi-title">Average Pressure</div>
-                <div class="kpi-value">{avg_press:.1f} hPa</div>
+                <div class="kpi-title">Dataset Rows</div>
+                <div class="kpi-value">{dataset_rows:,}</div>
             </div>
             <div class="kpi-card">
-                <div class="kpi-icon">🌧️</div>
-                <div class="kpi-title">Total Rainfall</div>
-                <div class="kpi-value">{tot_rain:.1f} mm</div>
+                <div class="kpi-icon">📋</div>
+                <div class="kpi-title">Dataset Columns</div>
+                <div class="kpi-value">{dataset_cols}</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-icon">🔍</div>
+                <div class="kpi-title">Missing Values</div>
+                <div class="kpi-value">{current_nulls}</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-icon">🧼</div>
+                <div class="kpi-title">Duplicate Rows</div>
+                <div class="kpi-value">{current_dups}</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-icon">🎯</div>
+                <div class="kpi-title">Model Accuracy</div>
+                <div class="kpi-value">{best_r2_text}</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-icon">🔮</div>
+                <div class="kpi-title">Last Prediction</div>
+                <div class="kpi-value">{last_pred_text}</div>
             </div>
         </div>
         """, unsafe_allow_html=True)
@@ -353,8 +416,69 @@ if page == "🏠 Dashboard Overview":
             st.markdown("**Missing Values:**")
             st.dataframe(missing_any[missing_any > 0] if missing_any.sum() > 0 else "None", use_container_width=True)
 
-        st.subheader("📈 Descriptive Statistics")
         st.dataframe(df_to_use.describe().T, use_container_width=True)
+        
+        # Machine Learning Status
+        if st.session_state.model_trained:
+            st.markdown("---")
+            st.subheader("🧠 Machine Learning Model Status")
+            
+            # Retrieve metrics
+            _, _, metadata, _ = utils.load_best_model()
+            if metadata is not None:
+                best_model = metadata["best_model_name"]
+                best_r2 = metadata["r2_score"]
+                # Find best model row in metrics
+                best_metrics = [m for m in metadata["metrics"] if m["Model"] == best_model][0]
+                best_rmse = best_metrics["RMSE"]
+                best_mae = best_metrics["MAE"]
+                
+                # Display 4 cards for Best Model | R2 Score | RMSE | MAE
+                col_c1, col_c2, col_c3, col_c4 = st.columns(4)
+                with col_c1:
+                    st.markdown(f"""
+                    <div class="kpi-card" style="border-left: 4px solid #10b981;">
+                        <div class="kpi-icon">🏆</div>
+                        <div class="kpi-title">Best Model</div>
+                        <div class="kpi-value" style="font-size: 1.1rem; padding-top: 5px;">{best_model}</div>
+                    </div>
+                    """, unsafe_allow_html=True)
+                with col_c2:
+                    st.markdown(f"""
+                    <div class="kpi-card" style="border-left: 4px solid #3b82f6;">
+                        <div class="kpi-icon">🎯</div>
+                        <div class="kpi-title">R² Score</div>
+                        <div class="kpi-value">{best_r2:.4f}</div>
+                    </div>
+                    """, unsafe_allow_html=True)
+                with col_c3:
+                    st.markdown(f"""
+                    <div class="kpi-card" style="border-left: 4px solid #f59e0b;">
+                        <div class="kpi-icon">📉</div>
+                        <div class="kpi-title">RMSE</div>
+                        <div class="kpi-value">{best_rmse:.2f}°C</div>
+                    </div>
+                    """, unsafe_allow_html=True)
+                with col_c4:
+                    st.markdown(f"""
+                    <div class="kpi-card" style="border-left: 4px solid #ef4444;">
+                        <div class="kpi-icon">📉</div>
+                        <div class="kpi-title">MAE</div>
+                        <div class="kpi-value">{best_mae:.2f}°C</div>
+                    </div>
+                    """, unsafe_allow_html=True)
+                
+                st.markdown("<br>", unsafe_allow_html=True)
+                st.markdown("##### 📊 Model Performance Comparison")
+                metrics_df = pd.DataFrame(metadata["metrics"])
+                
+                def highlight_best(row):
+                    if row["Model"] == best_model:
+                        return ["background-color: rgba(16, 185, 129, 0.15); border: 1.5px solid #10b981"] * len(row)
+                    return [""] * len(row)
+                
+                styled_metrics = metrics_df.style.apply(highlight_best, axis=1)
+                st.dataframe(styled_metrics, use_container_width=True)
         
     else:
         st.warning("Please upload a dataset or ensure the default dataset is generated to display contents.")
@@ -698,12 +822,30 @@ elif page == "🔮 Predict Temperature":
                 # Predict
                 predicted_temp = model.predict(scaled_inputs)[0]
                 
+                # Determine weather condition
+                condition = utils.determine_weather_condition(predicted_temp, humidity_input, rainfall_input)
+                
                 # Calculate Confidence Score
                 confidence = utils.calculate_confidence_score(
                     [humidity_input, wind_input, pressure_input, rainfall_input],
                     x_train_vals,
                     metadata["r2_score"]
                 )
+                
+                # Update Session State Predictions History
+                history_entry = {
+                    "Temperature": f"{predicted_temp:.2f}°C",
+                    "Humidity": f"{humidity_input:.1f}%",
+                    "Wind": f"{wind_input:.1f} km/h",
+                    "Pressure": f"{pressure_input:.1f} hPa",
+                    "Rainfall": f"{rainfall_input:.1f} mm",
+                    "Predicted Temp": f"{predicted_temp:.2f}°C",
+                    "Weather Condition": condition,
+                    "Confidence": f"{confidence}%",
+                    "Timestamp": pd.Timestamp.now().strftime("%Y-%m-%d %H:%M:%S")
+                }
+                st.session_state.prediction_history.append(history_entry)
+                st.session_state.last_prediction = f"{predicted_temp:.1f}°C"
                 
                 # Style confidence badge class
                 conf_class = "confidence-badge"
@@ -712,16 +854,24 @@ elif page == "🔮 Predict Temperature":
                 elif confidence < 75.0:
                     conf_class += " confidence-medium"
                 
-                # Display beautiful prediction card
+                # Display beautiful prediction card - Improved Layout
                 st.markdown(f"""
                 <div class="prediction-container">
-                    <div class="prediction-label">Estimated Temperature</div>
-                    <div class="prediction-val">{predicted_temp:.2f}°C</div>
-                    <div class="{conf_class}">Confidence Score: {confidence}%</div>
-                    <p class="prediction-sub">
-                        This prediction is based on {metadata['best_model_name']}. 
-                        Confidence is lower when input variables are outside normal training limits.
-                    </p>
+                    <div style="margin-bottom: 12px;">
+                        <div class="prediction-label" style="font-size: 0.8rem; opacity: 0.7; margin-bottom: 2px;">Predicted Temperature</div>
+                        <div class="prediction-val" style="font-size: 3rem; font-weight: 800; margin: 0;">🌡️ {predicted_temp:.1f}°C</div>
+                    </div>
+                    <div class="pred-detail-box">
+                        <div class="pred-detail-item">
+                            <div class="pred-detail-label">Weather Condition</div>
+                            <div class="pred-detail-value">{condition}</div>
+                        </div>
+                        <div style="border-left: 1px solid rgba(128, 128, 128, 0.15); height: 35px; display: inline-block;"></div>
+                        <div class="pred-detail-item">
+                            <div class="pred-detail-label">Confidence</div>
+                            <div class="{conf_class}" style="margin: 0; font-size: 0.9rem; padding: 4px 10px;">{confidence}%</div>
+                        </div>
+                    </div>
                 </div>
                 """, unsafe_allow_html=True)
                 
@@ -730,7 +880,7 @@ elif page == "🔮 Predict Temperature":
                     mode="gauge+number",
                     value=round(predicted_temp, 2),
                     domain={'x': [0, 1], 'y': [0, 1]},
-                    title={'text': "Predicted Temperature Indicator (°C)", 'font': {'size': 18, 'family': 'Outfit'}},
+                    title={'text': "Predicted Temperature Indicator (°C)", 'font': {'size': 16, 'family': 'Outfit'}},
                     gauge={
                         'axis': {'range': [-10, 45], 'tickwidth': 1, 'tickcolor': "gray"},
                         'bar': {'color': "#3b82f6"},
@@ -746,35 +896,35 @@ elif page == "🔮 Predict Temperature":
                     }
                 ))
                 fig_g.update_layout(
-                    height=280,
-                    margin=dict(l=20, r=20, t=40, b=20),
+                    height=240,
+                    margin=dict(l=20, r=20, t=30, b=10),
                     template="plotly_white"
                 )
                 st.plotly_chart(fig_g, use_container_width=True)
                 
-                # Prepare CSV download contents
-                prediction_result = pd.DataFrame({
-                    "Timestamp": [pd.Timestamp.now().strftime("%Y-%m-%d %H:%M:%S")],
-                    "Input_Humidity_Percent": [humidity_input],
-                    "Input_WindSpeed_Kmh": [wind_input],
-                    "Input_Pressure_Hpa": [pressure_input],
-                    "Input_Rainfall_Mm": [rainfall_input],
-                    "Predicted_Temperature_C": [round(predicted_temp, 3)],
-                    "Confidence_Percent": [confidence],
-                    "Model_Used": [metadata["best_model_name"]]
-                })
-                
-                # Download Button
-                csv_data = prediction_result.to_csv(index=False).encode('utf-8')
-                st.download_button(
-                    label="📥 Download Prediction Result as CSV",
-                    data=csv_data,
-                    file_name="weather_prediction_export.csv",
-                    mime="text/csv",
-                    use_container_width=True
-                )
             else:
                 st.info("Click the 'Calculate Predicted Temperature' button to display the estimate.")
+        
+        # Display Prediction History Log below the columns (full width)
+        st.markdown("<br><hr>", unsafe_allow_html=True)
+        st.subheader("📋 Session Prediction History")
+        if len(st.session_state.prediction_history) > 0:
+            history_df = pd.DataFrame(st.session_state.prediction_history)
+            
+            # Show history dataframe
+            st.dataframe(history_df, use_container_width=True)
+            
+            # Export all prediction history
+            history_csv = history_df.to_csv(index=False).encode('utf-8')
+            st.download_button(
+                label="📥 Download Full Prediction History as CSV",
+                data=history_csv,
+                file_name="weather_prediction_history.csv",
+                mime="text/csv",
+                use_container_width=True
+            )
+        else:
+            st.info("No predictions made in this session yet.")
 
 # --- 5. PROJECT INFO PAGE ---
 elif page == "ℹ️ Project Info":
@@ -819,5 +969,13 @@ elif page == "ℹ️ Project Info":
       $$\text{Confidence} = \max(10, R^2 \times 100) - \text{Penalty}$$
       Where the penalty represents structural extrapolation weight:
       $$\text{Penalty} = \max(0, (\text{Mean}(Z_{\text{Humidity}}, Z_{\text{Wind}}, Z_{\text{Pressure}}, Z_{\text{Rain}}) - 1.5) \times 15)$$
-      This mathematically adjusts the score downward when input features deviate far from the average sample boundaries.
     """)
+
+# --- FOOTER ---
+st.markdown("""
+<div class="footer">
+    Weather Analytics & ML Prediction<br>
+    Developed by <b>Abakaushik</b><br>
+    Artificial Intelligence Internship Project 2026
+</div>
+""", unsafe_allow_html=True)
